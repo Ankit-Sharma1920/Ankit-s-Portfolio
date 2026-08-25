@@ -1,6 +1,7 @@
-/* =========================================
+/* =====================================================
    ANKIT SHARMA PORTFOLIO
-   ========================================= */
+   Clean stylesheet matching current index.html
+   ===================================================== */
 
 :root {
   --background: #080a0d;
@@ -11,7 +12,6 @@
   --muted: #99a3ae;
 
   --accent: #a6ff00;
-
   --border: #242c34;
 
   --max-width: 1120px;
@@ -33,17 +33,14 @@ html {
 body {
   background: var(--background);
   color: var(--text);
-
   font-family: "Inter", sans-serif;
-
   line-height: 1.6;
-
   overflow-x: hidden;
 }
 
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 button {
@@ -54,93 +51,69 @@ button {
 /* ================= NAVBAR ================= */
 
 .navbar {
+  width: 100%;
   height: 76px;
 
-  max-width: var(--max-width);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 
-  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   padding: 0 24px;
 
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  position: sticky;
-
-  top: 0;
-
-  z-index: 100;
-
-  background: rgba(8, 10, 13, 0.88);
-
+  background: rgba(8, 10, 13, 0.92);
   backdrop-filter: blur(18px);
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
-
 
 .logo {
   font-family: "Space Grotesk", sans-serif;
-
   font-size: 27px;
-
   font-weight: 700;
-
   letter-spacing: -1px;
 }
-
 
 .logo span {
   color: var(--accent);
 }
 
-
 nav {
   display: flex;
-
   align-items: center;
-
   gap: 25px;
 
   color: var(--muted);
-
   font-size: 13px;
 }
 
-
 nav a {
-  transition: 0.25s ease;
+  transition: color 0.25s ease;
 }
-
 
 nav a:hover {
   color: var(--text);
 }
 
-
 .nav-contact {
   padding: 9px 15px;
 
   border: 1px solid var(--border);
-
   border-radius: 50px;
 
   color: var(--text);
 }
 
-
 .menu-btn {
   display: none;
 
+  border: 0;
   background: transparent;
 
-  border: none;
-
   color: var(--text);
-
   font-size: 25px;
 
   cursor: pointer;
@@ -150,51 +123,47 @@ nav a:hover {
 /* ================= COMMON ================= */
 
 .section {
+  width: 100%;
   max-width: var(--max-width);
 
-  margin: auto;
+  margin: 0 auto;
 
   padding: 110px 24px;
 
   border-top: 1px solid var(--border);
-}
 
+  /* IMPORTANT:
+     No opacity / visibility / transform here.
+     Sections must always be visible. */
+}
 
 .section-number {
   color: var(--accent);
 
   font-size: 11px;
-
   font-weight: 700;
 
   letter-spacing: 2px;
 }
 
-
 h1,
 h2,
 h3 {
   font-family: "Space Grotesk", sans-serif;
-
   line-height: 1.05;
 }
 
-
 h2 {
-  font-size: clamp(40px, 5vw, 62px);
-
-  letter-spacing: -2px;
-
   margin-top: 15px;
-
   margin-bottom: 45px;
-}
 
+  font-size: clamp(40px, 5vw, 62px);
+  letter-spacing: -2px;
+}
 
 h2 span {
   color: var(--accent);
 }
-
 
 .muted {
   color: var(--muted);
@@ -204,16 +173,16 @@ h2 span {
 /* ================= HERO ================= */
 
 .hero {
+  width: 100%;
   max-width: var(--max-width);
 
   min-height: calc(100vh - 76px);
 
-  margin: auto;
+  margin: 0 auto;
 
   padding: 90px 24px 70px;
 
   display: grid;
-
   grid-template-columns: 1.35fr 0.65fr;
 
   gap: 70px;
@@ -221,31 +190,26 @@ h2 span {
   align-items: center;
 }
 
-
 .eyebrow {
   color: var(--accent);
 
   font-size: 11px;
-
   font-weight: 700;
 
   letter-spacing: 2px;
 }
 
-
 .hero h1 {
+  margin: 18px 0 25px;
+
   font-size: clamp(55px, 8vw, 94px);
 
   letter-spacing: -5px;
-
-  margin: 18px 0 25px;
 }
-
 
 .hero h1 span {
   color: var(--accent);
 }
-
 
 .hero-description {
   max-width: 650px;
@@ -255,63 +219,55 @@ h2 span {
   font-size: 18px;
 }
 
-
 .hero-buttons {
   display: flex;
-
   gap: 12px;
 
   margin: 34px 0 23px;
 }
 
-
 .btn {
+  display: inline-block;
+
   padding: 13px 21px;
 
   border-radius: 50px;
 
   font-size: 14px;
-
   font-weight: 700;
 
-  transition: 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
 }
-
 
 .btn-primary {
   background: var(--accent);
-
   color: #080a0d;
 }
-
 
 .btn-primary:hover {
   transform: translateY(-3px);
 }
 
-
 .btn-outline {
   border: 1px solid var(--border);
 }
 
-
 .btn-outline:hover {
   border-color: var(--accent);
-
   color: var(--accent);
 }
 
-
 .social-links {
   display: flex;
-
   gap: 22px;
 
   color: var(--muted);
 
   font-size: 13px;
 }
-
 
 .social-links a:hover {
   color: var(--accent);
@@ -330,20 +286,16 @@ h2 span {
   );
 
   border: 1px solid var(--border);
-
   border-radius: 25px;
 
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
 }
 
-
 .profile-circle {
   width: 95px;
-
   height: 95px;
 
   display: grid;
-
   place-items: center;
 
   margin-bottom: 35px;
@@ -351,56 +303,44 @@ h2 span {
   border-radius: 25px;
 
   background: var(--accent);
-
   color: #080a0d;
 
   font-family: "Space Grotesk", sans-serif;
-
   font-size: 34px;
-
   font-weight: 700;
 }
-
 
 .small-label {
   color: var(--accent);
 
   font-size: 10px;
+  font-weight: 700;
 
   letter-spacing: 2px;
-
-  font-weight: 700;
 }
-
 
 .hero-card h3 {
-  font-size: 23px;
-
   margin: 9px 0 5px;
-}
 
+  font-size: 23px;
+}
 
 .stats {
   display: flex;
-
   gap: 45px;
 
-  border-top: 1px solid var(--border);
-
   margin-top: 28px;
-
   padding-top: 22px;
-}
 
+  border-top: 1px solid var(--border);
+}
 
 .stat strong {
   display: block;
 
   font-family: "Space Grotesk", sans-serif;
-
   font-size: 27px;
 }
-
 
 .stat span {
   color: var(--muted);
@@ -423,7 +363,6 @@ h2 span {
   align-items: start;
 }
 
-
 .about-content {
   padding-top: 45px;
 
@@ -431,7 +370,6 @@ h2 span {
 
   font-size: 19px;
 }
-
 
 .location {
   margin-top: 30px;
@@ -452,7 +390,6 @@ h2 span {
   gap: 14px;
 }
 
-
 .skill-card {
   padding: 27px;
 
@@ -462,16 +399,15 @@ h2 span {
 
   border-radius: 17px;
 
-  transition: 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
-
 
 .skill-card:hover {
   transform: translateY(-7px);
-
   border-color: var(--accent);
 }
-
 
 .skill-card > span {
   color: var(--accent);
@@ -479,13 +415,11 @@ h2 span {
   font-size: 11px;
 }
 
-
 .skill-card h3 {
-  font-size: 22px;
-
   margin: 28px 0 8px;
-}
 
+  font-size: 22px;
+}
 
 .skill-card p {
   color: var(--muted);
@@ -506,12 +440,10 @@ h2 span {
   margin-top: 18px;
 }
 
-
 .tags span {
   padding: 5px 11px;
 
   border: 1px solid var(--border);
-
   border-radius: 50px;
 
   color: #bbc3cc;
@@ -523,11 +455,10 @@ h2 span {
 /* ================= EDUCATION ================= */
 
 .timeline {
-  border-left: 1px solid var(--border);
-
   margin-left: 8px;
-}
 
+  border-left: 1px solid var(--border);
+}
 
 .timeline-item {
   position: relative;
@@ -541,18 +472,15 @@ h2 span {
   padding: 0 0 58px 28px;
 }
 
-
 .timeline-item::before {
   content: "";
 
   position: absolute;
 
   left: -5px;
-
   top: 4px;
 
   width: 9px;
-
   height: 9px;
 
   border-radius: 50%;
@@ -560,24 +488,20 @@ h2 span {
   background: var(--accent);
 }
 
-
 .timeline-year {
   color: var(--accent);
 
   font-family: "Space Grotesk", sans-serif;
 
   font-size: 13px;
-
   font-weight: 600;
 }
 
-
 .timeline-content h3 {
-  font-size: 23px;
-
   margin-bottom: 8px;
-}
 
+  font-size: 23px;
+}
 
 .timeline-content p {
   font-size: 14px;
@@ -598,19 +522,17 @@ h2 span {
   background: var(--surface);
 
   border: 1px solid var(--border);
-
   border-radius: 20px;
 
-  transition: 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
-
 
 .project-card:hover {
-  border-color: var(--accent);
-
   transform: translateY(-5px);
+  border-color: var(--accent);
 }
-
 
 .project-number {
   color: var(--accent);
@@ -618,28 +540,23 @@ h2 span {
   font-family: "Space Grotesk", sans-serif;
 
   font-size: 38px;
-
   font-weight: 700;
 }
-
 
 .project-type {
   color: var(--accent);
 
   font-size: 10px;
-
   font-weight: 700;
 
   letter-spacing: 2px;
 }
 
-
 .project-content h3 {
-  font-size: 32px;
-
   margin: 10px 0 15px;
-}
 
+  font-size: 32px;
+}
 
 .project-content > p:not(.project-type) {
   max-width: 750px;
@@ -658,44 +575,38 @@ h2 span {
   gap: 14px;
 }
 
-
 .cert-card {
   padding: 27px;
 
   background: var(--surface);
 
   border: 1px solid var(--border);
-
   border-radius: 17px;
 
-  transition: 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
-
 
 .cert-card:hover {
   transform: translateY(-5px);
-
   border-color: var(--accent);
 }
-
 
 .cert-card > span {
   color: var(--accent);
 
   font-size: 10px;
+  font-weight: 700;
 
   letter-spacing: 1.5px;
-
-  font-weight: 700;
 }
-
 
 .cert-card h3 {
-  font-size: 20px;
-
   margin: 20px 0 10px;
-}
 
+  font-size: 20px;
+}
 
 .cert-card p {
   color: var(--muted);
@@ -712,8 +623,9 @@ h2 span {
   grid-template-columns: 0.8fr 1.2fr;
 
   gap: 80px;
-}
 
+  align-items: start;
+}
 
 .experience-card {
   margin-top: 45px;
@@ -722,7 +634,6 @@ h2 span {
 
   border-left: 2px solid var(--accent);
 }
-
 
 .experience-meta {
   display: flex;
@@ -738,13 +649,11 @@ h2 span {
   letter-spacing: 1.5px;
 }
 
-
 .experience-card h3 {
-  font-size: 35px;
-
   margin: 18px 0 8px;
-}
 
+  font-size: 35px;
+}
 
 .experience-card p {
   color: var(--muted);
@@ -756,13 +665,11 @@ h2 span {
 .contact-description {
   max-width: 600px;
 
-  color: var(--muted);
-
   margin-top: -25px;
-
   margin-bottom: 40px;
-}
 
+  color: var(--muted);
+}
 
 .contact-grid {
   display: grid;
@@ -771,7 +678,6 @@ h2 span {
 
   border-top: 1px solid var(--border);
 }
-
 
 .contact-grid a {
   display: flex;
@@ -783,15 +689,11 @@ h2 span {
   padding: 22px 0;
 
   border-bottom: 1px solid var(--border);
-
-  transition: 0.25s ease;
 }
-
 
 .contact-grid a:nth-child(odd) {
   margin-right: 35px;
 }
-
 
 .contact-grid a:nth-child(even) {
   padding-left: 35px;
@@ -799,11 +701,9 @@ h2 span {
   border-left: 1px solid var(--border);
 }
 
-
 .contact-grid a:hover strong {
   color: var(--accent);
 }
-
 
 .contact-grid span {
   color: var(--accent);
@@ -813,30 +713,30 @@ h2 span {
   letter-spacing: 1.5px;
 }
 
-
 .contact-grid strong {
   font-size: 15px;
 
   font-weight: 500;
 
-  transition: 0.25s ease;
+  transition: color 0.25s ease;
 }
 
 
 /* ================= FOOTER ================= */
 
 footer {
+  width: 100%;
   max-width: var(--max-width);
 
-  margin: auto;
+  margin: 0 auto;
 
   padding: 25px 24px 35px;
-
-  border-top: 1px solid var(--border);
 
   display: flex;
 
   justify-content: space-between;
+
+  border-top: 1px solid var(--border);
 
   color: #68727e;
 
@@ -844,31 +744,7 @@ footer {
 }
 
 
-/* ================= ANIMATION ================= */
-
-.reveal {
-  animation: heroReveal 0.8s ease both;
-}
-
-
-@keyframes heroReveal {
-
-  from {
-    opacity: 0;
-
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform: translateY(0);
-  }
-
-}
-
-
-/* ================= RESPONSIVE ================= */
+/* ================= MOBILE ================= */
 
 @media (max-width: 850px) {
 
@@ -876,16 +752,13 @@ footer {
     display: block;
   }
 
-
   nav {
     display: none;
 
     position: absolute;
 
     top: 76px;
-
     left: 0;
-
     right: 0;
 
     padding: 22px 24px;
@@ -899,11 +772,9 @@ footer {
     border-bottom: 1px solid var(--border);
   }
 
-
   nav.open {
     display: flex;
   }
-
 
   .hero {
     grid-template-columns: 1fr;
@@ -913,7 +784,6 @@ footer {
     padding-top: 65px;
   }
 
-
   .two-column,
   .experience-section {
     grid-template-columns: 1fr;
@@ -921,18 +791,17 @@ footer {
     gap: 15px;
   }
 
-
   .about-content {
     padding-top: 0;
   }
 
-
   .skills-grid {
     grid-template-columns: 1fr 1fr;
   }
-
 }
 
+
+/* ================= SMALL MOBILE ================= */
 
 @media (max-width: 600px) {
 
@@ -940,11 +809,9 @@ footer {
     padding: 0 20px;
   }
 
-
   .hero {
     padding: 55px 20px;
   }
-
 
   .hero h1 {
     font-size: 54px;
@@ -952,37 +819,30 @@ footer {
     letter-spacing: -3px;
   }
 
-
   .section {
     padding: 80px 20px;
   }
-
 
   .skills-grid,
   .certifications-grid {
     grid-template-columns: 1fr;
   }
 
-
   .project-card {
     grid-template-columns: 1fr;
   }
-
 
   .timeline-item {
     grid-template-columns: 65px 1fr;
   }
 
-
   .contact-grid {
     grid-template-columns: 1fr;
   }
 
-
   .contact-grid a:nth-child(odd) {
     margin-right: 0;
   }
-
 
   .contact-grid a:nth-child(even) {
     padding-left: 0;
@@ -990,91 +850,9 @@ footer {
     border-left: 0;
   }
 
-
   footer {
     flex-direction: column;
 
     gap: 8px;
   }
-
-}
-/* ================= SECTION FIX ================= */
-
-.section {
-  scroll-margin-top: 90px;
-}
-
-/* Animation starts only when JS adds .animate */
-.animate {
-  opacity: 0;
-  transform: translateY(25px);
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
-}
-
-.animate.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-/* Keep important content visible if JS is unavailable */
-.no-js .animate {
-  opacity: 1;
-  transform: none;
-}
-
-
-/* Active navigation */
-
-nav a.active {
-  color: var(--accent);
-}
-/* =========================================
-   IMPORTANT VISIBILITY FIX
-   ========================================= */
-
-/* Make every section permanently visible */
-.section,
-.skill-card,
-.timeline-item,
-.project-card,
-.cert-card,
-.experience-card {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-}
-
-
-/* Smooth navigation positioning */
-section {
-    scroll-margin-top: 90px;
-}
-
-
-/* Mobile navigation */
-@media (max-width: 850px) {
-
-    nav.open {
-        display: flex !important;
-    }
-
-}
-/* ===== FINAL VISIBILITY FIX ===== */
-
-.section,
-.skill-card,
-.timeline-item,
-.project-card,
-.cert-card,
-.experience-card {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-}
-
-section {
-    scroll-margin-top: 90px;
 }
