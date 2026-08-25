@@ -1031,3 +1031,34 @@ footer {
 nav a.active {
   color: var(--accent);
 }
+/* =========================================
+   IMPORTANT VISIBILITY FIX
+   ========================================= */
+
+/* Make every section permanently visible */
+.section,
+.skill-card,
+.timeline-item,
+.project-card,
+.cert-card,
+.experience-card {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+
+/* Smooth navigation positioning */
+section {
+    scroll-margin-top: 90px;
+}
+
+
+/* Mobile navigation */
+@media (max-width: 850px) {
+
+    nav.open {
+        display: flex !important;
+    }
+
+}
