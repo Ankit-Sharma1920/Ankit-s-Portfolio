@@ -4,25 +4,6 @@ A modern, responsive personal portfolio website built using **HTML, CSS and Java
 
 The website showcases my education, technical skills, project experience, certifications and professional experience.
 
----
-
-## 👨‍💻 About Me
-
-I am **Ankit Sharma**, a Bachelor of Computer Applications (BCA) student from Kanpur, Uttar Pradesh.
-
-I am developing practical skills in:
-
-- Python
-- Database Management
-- Data Analytics
-- MS Excel
-- MS Word
-- PowerPoint
-
-I am interested in continuously improving my programming and problem-solving skills through projects, training and practical learning.
-
----
-
 ## 🚀 Features
 
 - Modern dark UI
