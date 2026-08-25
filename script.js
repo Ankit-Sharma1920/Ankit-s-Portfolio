@@ -1,52 +1,63 @@
-/* =========================================
-   ANKIT SHARMA PORTFOLIO
-   JavaScript
-   ========================================= */
-
-
-/* ================= MOBILE MENU ================= */
+// ================= MOBILE MENU =================
 
 const menuButton = document.querySelector(".menu-btn");
 const navigation = document.querySelector("#nav-menu");
 
 if (menuButton && navigation) {
-
   menuButton.addEventListener("click", () => {
-
     navigation.classList.toggle("open");
-
   });
-
 
   document.querySelectorAll("#nav-menu a").forEach((link) => {
-
     link.addEventListener("click", () => {
-
       navigation.classList.remove("open");
-
     });
-
   });
-
 }
 
 
-/* ================= SCROLL REVEAL ================= */
+// ================= SMOOTH SCROLL =================
 
-const revealElements = document.querySelectorAll(
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", function (event) {
+
+    const targetId = this.getAttribute("href");
+
+    if (!targetId || targetId === "#") {
+      return;
+    }
+
+    const target = document.querySelector(targetId);
+
+    if (target) {
+      event.preventDefault();
+
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+      history.pushState(null, "", targetId);
+    }
+
+  });
+});
+
+
+// ================= SCROLL ANIMATION =================
+
+const animatedElements = document.querySelectorAll(
   ".section, .skill-card, .timeline-item, .project-card, .cert-card, .experience-card"
 );
 
-
 const observer = new IntersectionObserver(
-
   (entries) => {
 
     entries.forEach((entry) => {
 
       if (entry.isIntersecting) {
 
-        entry.target.classList.add("visible");
+        entry.target.classList.add("show");
 
         observer.unobserve(entry.target);
 
@@ -55,37 +66,31 @@ const observer = new IntersectionObserver(
     });
 
   },
-
   {
-    threshold: 0.12
+    threshold: 0.08
   }
-
 );
 
 
-revealElements.forEach((element) => {
+// IMPORTANT:
+// Elements remain visible even if JavaScript animation
+// doesn't run.
 
-  element.style.opacity = "0";
+animatedElements.forEach((element) => {
 
-  element.style.transform = "translateY(20px)";
-
-  element.style.transition =
-    "opacity 0.7s ease, transform 0.7s ease";
+  element.classList.add("animate");
 
   observer.observe(element);
 
 });
 
 
-/* ================= ACTIVE NAVIGATION ================= */
+// ================= ACTIVE NAVIGATION =================
 
 const sections = document.querySelectorAll("main section[id]");
-
 const navLinks = document.querySelectorAll("nav a");
 
-
 const sectionObserver = new IntersectionObserver(
-
   (entries) => {
 
     entries.forEach((entry) => {
@@ -93,21 +98,15 @@ const sectionObserver = new IntersectionObserver(
       if (entry.isIntersecting) {
 
         navLinks.forEach((link) => {
-
           link.classList.remove("active");
-
         });
-
 
         const activeLink = document.querySelector(
           `nav a[href="#${entry.target.id}"]`
         );
 
-
         if (activeLink) {
-
           activeLink.classList.add("active");
-
         }
 
       }
@@ -115,29 +114,11 @@ const sectionObserver = new IntersectionObserver(
     });
 
   },
-
   {
-    rootMargin: "-35% 0px -55% 0px"
+    rootMargin: "-30% 0px -60% 0px"
   }
-
 );
 
-
 sections.forEach((section) => {
-
   sectionObserver.observe(section);
-
 });
-
-
-/* ================= CURRENT YEAR ================= */
-
-const year = new Date().getFullYear();
-
-const footerYear = document.querySelector("footer span");
-
-if (footerYear) {
-
-  footerYear.textContent = `© ${year} Ankit Sharma`;
-
-}
