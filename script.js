@@ -1,39 +1,61 @@
-// Mobile Menu
+// =====================================================
+// ANKIT SHARMA PORTFOLIO
+// Simple JavaScript - no section hiding/animations
+// =====================================================
+
+
+// ================= MOBILE MENU =================
+
 const menuButton = document.querySelector(".menu-btn");
 const navigation = document.querySelector("#nav-menu");
 
 if (menuButton && navigation) {
-    menuButton.addEventListener("click", () => {
-        navigation.classList.toggle("open");
+
+  menuButton.addEventListener("click", () => {
+    navigation.classList.toggle("open");
+  });
+
+
+  const navigationLinks = navigation.querySelectorAll("a");
+
+  navigationLinks.forEach((link) => {
+
+    link.addEventListener("click", () => {
+      navigation.classList.remove("open");
     });
 
-    document.querySelectorAll("#nav-menu a").forEach((link) => {
-        link.addEventListener("click", () => {
-            navigation.classList.remove("open");
-        });
-    });
+  });
+
 }
 
 
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
+// ================= SMOOTH SCROLL =================
 
-    link.addEventListener("click", function (event) {
+const internalLinks = document.querySelectorAll('a[href^="#"]');
 
-        const targetId = this.getAttribute("href");
+internalLinks.forEach((link) => {
 
-        if (targetId === "#") return;
+  link.addEventListener("click", (event) => {
 
-        const target = document.querySelector(targetId);
+    const targetId = link.getAttribute("href");
 
-        if (target) {
+    if (!targetId || targetId === "#") {
+      return;
+    }
 
-            event.preventDefault();
+    const targetElement = document.querySelector(targetId);
 
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        }
+    if (!targetElement) {
+      return;
+    }
+
+    event.preventDefault();
+
+    targetElement.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
     });
+
+  });
+
 });
