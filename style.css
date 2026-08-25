@@ -1062,3 +1062,19 @@ section {
     }
 
 }
+/* ===== FINAL VISIBILITY FIX ===== */
+
+.section,
+.skill-card,
+.timeline-item,
+.project-card,
+.cert-card,
+.experience-card {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
