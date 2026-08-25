@@ -998,3 +998,36 @@ footer {
   }
 
 }
+/* ================= SECTION FIX ================= */
+
+.section {
+  scroll-margin-top: 90px;
+}
+
+/* Animation starts only when JS adds .animate */
+.animate {
+  opacity: 0;
+  transform: translateY(25px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Keep important content visible if JS is unavailable */
+.no-js .animate {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* Active navigation */
+
+nav a.active {
+  color: var(--accent);
+}
