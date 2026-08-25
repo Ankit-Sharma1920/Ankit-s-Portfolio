@@ -1,5 +1,4 @@
-// ================= MOBILE MENU =================
-
+// Mobile Menu
 const menuButton = document.querySelector(".menu-btn");
 const navigation = document.querySelector("#nav-menu");
 
@@ -16,17 +15,14 @@ if (menuButton && navigation) {
 }
 
 
-// ================= SMOOTH SCROLL =================
-
+// Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
     link.addEventListener("click", function (event) {
 
         const targetId = this.getAttribute("href");
 
-        if (!targetId || targetId === "#") {
-            return;
-        }
+        if (targetId === "#") return;
 
         const target = document.querySelector(targetId);
 
@@ -38,9 +34,6 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
                 behavior: "smooth",
                 block: "start"
             });
-
         }
-
     });
-
 });
